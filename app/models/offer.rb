@@ -1,4 +1,6 @@
 class Offer < ApplicationRecord
+  has_many_attached :photos
+
   belongs_to :user
   validates :price_per_day, presence: true, numericality: { only_integer: true }
   validates :capacity, presence: true, numericality: { only_integer: true }

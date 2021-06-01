@@ -9,5 +9,6 @@
   <%= f.input :location_address %>
   <%= f.input :description %>
   <%= f.input :offer_title %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
