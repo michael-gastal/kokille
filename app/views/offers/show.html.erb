@@ -1,10 +1,14 @@
 <h1> <%=  @offer.offer_title %> </h1>
 <p> <%= @offer.price_per_day %>€ </p>
-<p> <%= @offer.description %> </p> 
- 
+<p> <%= @offer.description %> </p>
+
+<% @offer.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
+<% end %>
+
 <%= link_to "Edit #{@offer.offer_title}",
            edit_offer_path(@offer.id) %>
-|            
+|
 <%= link_to "Delete #{@offer.offer_title}",
             offer_path(@offer),
             method: :delete,
