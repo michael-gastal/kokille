@@ -1,0 +1,13 @@
+<h1>Update your offer bby</h1>
+
+<%= simple_form_for(@offer) do |f| %>
+  <%= f.input :price_per_day %>
+  <%= f.input :capacity %>
+  <%= f.input :shell_type %>
+  <%= f.input :start_available_time %>
+  <%= f.input :end_available_time %>
+  <%= f.input :location_address %>
+  <%= f.input :description %>
+  <%= f.input :offer_title %>
+  <%= f.submit %>
+<% end %>
