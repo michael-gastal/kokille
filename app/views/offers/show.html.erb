@@ -1,0 +1,15 @@
+<h1> <%=  @offer.offer_title %> </h1>
+<p> <%= @offer.price_per_day %>€ </p>
+<p> <%= @offer.description %> </p> 
+ 
+<%= link_to "Edit #{@offer.offer_title}",
+           edit_offer_path(@offer.id) %>
+|            
+<%= link_to "Delete #{@offer.offer_title}",
+            offer_path(@offer),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<br>
+<br>
+<%= link_to "Back",
+            offers_path %>
