@@ -21,11 +21,13 @@
   <% end %>
 </div>
 
-<%= link_to "Create offer bby", new_offer_path %>
+<% if policy(Offer).create? %>
+  <%= link_to "Create offer bby", new_offer_path %>
 
-<!-- <p> offer.offer_title </p> -->
-<!-- <p> offer.description </p> -->
-<!-- link_to "See more", -->
-<!--            offer_path(offer) -->
-<!-- end -->
-<!-- </div> -->
+  <!-- <p> offer.offer_title </p> -->
+  <!-- <p> offer.description </p> -->
+  <!-- link_to "See more", -->
+  <!--            offer_path(offer) -->
+  <!-- end -->
+  <!-- </div> -->
+<% end %>
