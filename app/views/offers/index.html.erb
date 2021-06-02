@@ -1,15 +1,31 @@
-<h1>Yo tout le monde les gens</h1>
-<div>
-<% @offers.each do |offer| %>
-<p> <%= offer.offer_title %> </p>
-<p> <%= offer.description %> </p>
-<%= link_to "See more",
-            offer_path(offer)%>
-<% end %>
+<h2>All the shells</h2>
+
+<div class="cards">
+  <% @offers.each do |offer| %>
+    <div class="card-trip">
+      <%= cl_image_tag offer.photos.first.key %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= offer.offer_title %></h2>
+          <p><%= offer.description[0..50] %>...</p>
+          <p><%= offer.price_per_day %>€/nuit · <%= offer.capacity %> limaces</p>
+          <%= link_to "See more", offer_path(offer) %>
+        </div>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
+        <% else %>
+          <%= image_tag("default_avatar.jpg", class: "card-trip-user avatar-bordered") %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
-<br>
-<br>
-<div>
-<%= link_to "Create offer bby",
-            new_offer_path %>
-</div>
+
+<%= link_to "Create offer bby", new_offer_path %>
+
+<!-- <p> offer.offer_title </p> -->
+<!-- <p> offer.description </p> -->
+<!-- link_to "See more", -->
+<!--            offer_path(offer) -->
+<!-- end -->
+<!-- </div> -->
