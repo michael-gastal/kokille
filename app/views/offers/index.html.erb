@@ -8,8 +8,9 @@
         <div>
           <h2><%= offer.offer_title %></h2>
           <p><%= offer.description[0..50] %>...</p>
-          <p><%= offer.price_per_day %>€/nuit · <%= offer.capacity %> limaces</p>
-          <%= link_to "See more", offer_path(offer) %>
+          <p><%= offer.price_per_day %>€/night · <%= offer.capacity %> slugs</p>
+          <br>
+          <%= link_to "See more", offer_path(offer), class: "btn-infos" %>
         </div>
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
@@ -22,10 +23,3 @@
 </div>
 
 <%= link_to "Create offer bby", new_offer_path %>
-
-<!-- <p> offer.offer_title </p> -->
-<!-- <p> offer.description </p> -->
-<!-- link_to "See more", -->
-<!--            offer_path(offer) -->
-<!-- end -->
-<!-- </div> -->

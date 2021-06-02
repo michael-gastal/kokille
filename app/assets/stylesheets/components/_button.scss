@@ -1,0 +1,13 @@
+.btn-infos {
+  color: white;
+  background-color: #40916c;
+  opacity: 0.8;
+  transition: opacity .5s ease;
+  padding: 4px 6px;
+  border-radius: 4px;
+  &:hover {
+    opacity: 1;
+    color: white;
+    text-decoration: none;
+  }
+}
