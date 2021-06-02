@@ -16,6 +16,9 @@
         </li>
         <% if policy(Offer).create? %>
           <li class="nav-item">
+            <%= link_to "Offers", offers_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Create an offer", new_offer_path, class: "nav-link" %>
           </li>
         <% end %>
