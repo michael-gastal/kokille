@@ -1,22 +1,32 @@
-<h1> <%=  @offer.offer_title %> </h1>
-<p> <%= @offer.price_per_day %>€ </p>
-<p> <%= @offer.description %> </p>
+<div class="page-title">
+  <h2><%=  @offer.offer_title %></h2>
+  <p><%= @offer.location_address %></p>
+</div>
 
-<% @offer.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<br>
-<br>
-<% if policy(@offer).edit? %>
-  <%= link_to "Edit #{@offer.offer_title}",edit_offer_path(@offer.id) %>
-<% end %>
-  |
-<% if policy(@offer).destroy? %>
-  <%= link_to "Delete #{@offer.offer_title}",offer_path(@offer),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-<% end %>
-<br>
-<br>
-<%= link_to "Back",
-            offers_path %>
+<div class="offer-content">
+  <% if @offer.photos.attached? %>
+    <% @offer.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  <% else %>
+    <%= image_tag("default_shell.png") %>
+  <% end %>
+  <p><%= @offer.shell_type.capitalize %> for <%= @offer.capacity %> slug<%= @offer.capacity > 1 ? 's' : '' %></p>
+  <p>Available from <%= @offer.start_available_time %> to <%= @offer.end_available_time %></p>
+  <p>Host : <%= @offer.user.name %></p>
+  <p><%= @offer.description %></p>
+  <% if policy(Booking).create? %>
+    <p><%= link_to 'Booking for this offer', new_offer_booking_path(@offer) %></p>
+  <% end %>
+  <p><%= link_to "Back", offers_path, class: "btn-infos" %></p>
+
+  <% if policy(@offer).edit? %>
+    <%= link_to "Edit your offer",edit_offer_path(@offer.id) %>
+  <% end %>
+
+  <% if policy(@offer).destroy? %>
+    <%= link_to "Delete your offer",offer_path(@offer),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+  <% end %>
+</div>
