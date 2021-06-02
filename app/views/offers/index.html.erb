@@ -1,14 +1,20 @@
-<h2>All the shells</h2>
+<div class="page-title">
+  <h2>All the shells</h2>
+</div>
 
 <div class="cards">
   <% @offers.each do |offer| %>
     <div class="card-trip">
-      <%= cl_image_tag offer.photos.first.key %>
+      <% if offer.photos.attached? %>
+        <%= cl_image_tag offer.photos.first.key %>
+      <% else %>
+        <%= image_tag("default_shell.png") %>
+      <% end %>
       <div class="card-trip-infos">
         <div>
           <h2><%= offer.offer_title %></h2>
           <p><%= offer.description[0..50] %>...</p>
-          <p><%= offer.price_per_day %>€/night · <%= offer.capacity %> slugs</p>
+          <p><%= offer.price_per_day %>€/night · <%= offer.capacity %> slug<%= offer.capacity > 1 ? 's' : '' %></p>
           <br>
           <%= link_to "See more", offer_path(offer), class: "btn-infos" %>
         </div>
@@ -21,15 +27,3 @@
     </div>
   <% end %>
 </div>
-
-
-<% if policy(Offer).create? %>
-  <%= link_to "Create offer bby", new_offer_path %>
-
-  <!-- <p> offer.offer_title </p> -->
-  <!-- <p> offer.description </p> -->
-  <!-- link_to "See more", -->
-  <!--            offer_path(offer) -->
-  <!-- end -->
-  <!-- </div> -->
-<% end %>
