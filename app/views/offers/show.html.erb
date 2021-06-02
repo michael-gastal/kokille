@@ -1,6 +1,7 @@
 <div class="page-title">
   <h2><%=  @offer.offer_title %></h2>
   <p><%= @offer.location_address %></p>
+  <p>Host : <%= @offer.user.name %></p>
 </div>
 
 <div class="offer-content">
@@ -11,9 +12,9 @@
   <% else %>
     <%= image_tag("default_shell.png") %>
   <% end %>
+  <p><%= @offer.price_per_day %>€/day</p>
   <p><%= @offer.shell_type.capitalize %> for <%= @offer.capacity %> slug<%= @offer.capacity > 1 ? 's' : '' %></p>
   <p>Available from <%= @offer.start_available_time %> to <%= @offer.end_available_time %></p>
-  <p>Host : <%= @offer.user.name %></p>
   <p><%= @offer.description %></p>
   <% if policy(Booking).create? %>
     <p><%= link_to 'Booking for this offer', new_offer_booking_path(@offer) %></p>
