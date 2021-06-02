@@ -5,9 +5,9 @@ body {
 }
 
 .container-bg {
-    color: white;
+    color: #FF006B;
     margin-bottom: 24px;
-    background-image: linear-gradient(rgba(100, 172, 51, 0.25), rgba(22, 22, 22, 0.25)),url('shell.jpg');
+    background-image: linear-gradient(rgba(100, 172, 51, 0.25), rgba(22, 22, 22, 0.25)),url('snail.jpeg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -15,6 +15,11 @@ body {
     padding-top: 15%;
     padding-left: 5%;
     padding-right: 5%;
+}
+
+.container-bg h1{
+    font-size: 58px;
+    font-weight: bold;
 }
 
 .searchbar {
@@ -31,6 +36,7 @@ body {
     margin-top: 40px;
     margin-bottom: 15px;
     color: #242424;
+    text-align:center;
   }
   
   .content p {
