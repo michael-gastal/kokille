@@ -14,6 +14,10 @@ class ApplicationPolicy
     false
   end
 
+  def my_offers?
+    false
+  end
+
   def create?
     false
   end

@@ -22,6 +22,11 @@
             <%= link_to "Create an offer", new_offer_path, class: "nav-link" %>
           </li>
         <% end %>
+        <% if policy(Offer).my_offers? %>
+          <li class="nav-item">
+            <%= link_to "See my offers", my_offers_offers_path, class: "nav-link" %>
+          </li>
+        <% end %>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

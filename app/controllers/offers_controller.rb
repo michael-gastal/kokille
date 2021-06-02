@@ -8,6 +8,11 @@ class OffersController < ApplicationController
   def show
   end
 
+  def my_offers
+    @offers = Offer.where(user: current_user)
+    authorize @offers
+  end
+
   def new
     @offer = Offer.new
     authorize @offer
