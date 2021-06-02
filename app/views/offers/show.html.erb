@@ -15,6 +15,9 @@
   <p>Available from <%= @offer.start_available_time %> to <%= @offer.end_available_time %></p>
   <p>Host : <%= @offer.user.name %></p>
   <p><%= @offer.description %></p>
+  <% if policy(Booking).create? %>
+    <p><%= link_to 'Booking for this offer', new_offer_booking_path(@offer) %></p>
+  <% end %>
   <p><%= link_to "Back", offers_path, class: "btn-infos" %></p>
 
   <% if policy(@offer).edit? %>
