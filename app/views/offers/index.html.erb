@@ -1,15 +1,15 @@
 <h1>Yo tout le monde les gens</h1>
 <div>
-<% @offers.each do |offer| %>
-<p> <%= offer.offer_title %> </p>
-<p> <%= offer.description %> </p>
-<%= link_to "See more",
-            offer_path(offer)%>
-<% end %>
+  <% @offers.each do |offer| %>
+    <p> <%= offer.offer_title %> </p>
+    <p> <%= offer.description %> </p>
+    <%= link_to "See more",offer_path(offer)%>
+  <% end %>
 </div>
 <br>
 <br>
 <div>
-<%= link_to "Create offer bby",
-            new_offer_path %>
+  <% if policy(Offer).create? %>
+    <%= link_to "Create offer bby", new_offer_path %>
+  <% end %>
 </div>

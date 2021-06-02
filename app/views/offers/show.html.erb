@@ -7,13 +7,15 @@
 <% end %>
 <br>
 <br>
-<%= link_to "Edit #{@offer.offer_title}",
-           edit_offer_path(@offer.id) %>
-|
-<%= link_to "Delete #{@offer.offer_title}",
-            offer_path(@offer),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+<% if policy(@offer).edit? %>
+  <%= link_to "Edit #{@offer.offer_title}",edit_offer_path(@offer.id) %>
+<% end %>
+  |
+<% if policy(@offer).destroy? %>
+  <%= link_to "Delete #{@offer.offer_title}",offer_path(@offer),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+<% end %>
 <br>
 <br>
 <%= link_to "Back",
