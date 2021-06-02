@@ -1,9 +1,8 @@
-<div class="ctm">
-  <div class="page-title">
+<div class="page-title">
   <h2>All the shells</h2>
 </div>
 
-  <div class="cards">
+<div class="cards">
     <% @offers.each do |offer| %>
       <div class="card-trip">
         <% if offer.photos.attached? %>
@@ -28,4 +27,3 @@
       </div>
     <% end %>
   </div>
-</div>
