@@ -1,8 +1,5 @@
 <div class="container">
-  <h4>Your information:</h4>
-
-
-
+  <h2>Your information:</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div class="row">
       <div class="col-md-4">
@@ -40,7 +37,7 @@
       </div>
       <%= f.button :submit, "Sign up", :class => "btn btn-primary btn-lg" %>
       <%= render "devise/shared/links" %>
-      </div>
+    </div>
     <% end %>
 </div>
 

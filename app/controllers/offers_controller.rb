@@ -1,20 +1,22 @@
 class OffersController < ApplicationController
+  before_action :find_offer, only: [:show, :edit, :update, :destroy]
 
   def index
     @offers = Offer.all
   end
 
   def show
-    find_offer
   end
 
   def new
     @offer = Offer.new
+    authorize @offer
   end
 
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
+    authorize @offer
     if @offer.save
       redirect_to offers_path
     else
@@ -23,11 +25,9 @@ class OffersController < ApplicationController
   end
 
   def edit
-    find_offer
   end
 
   def update
-    find_offer
     if @offer.update(offer_params)
       redirect_to @offer
     else
@@ -36,7 +36,6 @@ class OffersController < ApplicationController
   end
 
   def destroy
-    find_offer
     @offer.destroy
     redirect_to offers_path
   end
@@ -45,6 +44,7 @@ class OffersController < ApplicationController
 
   def find_offer
     @offer = Offer.find(params[:id])
+    authorize @offer
   end
 
   def offer_params
