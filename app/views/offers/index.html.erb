@@ -18,8 +18,8 @@
           <br>
           <%= link_to "See more", offer_path(offer), class: "btn-infos" %>
         </div>
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
+        <% if offer.user.photo.attached? %>
+          <%= cl_image_tag offer.user.photo.key, class: "card-trip-user avatar-bordered" %>
         <% else %>
           <%= image_tag("default_avatar.jpg", class: "card-trip-user avatar-bordered") %>
         <% end %>
