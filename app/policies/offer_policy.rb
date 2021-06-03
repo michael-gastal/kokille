@@ -9,6 +9,10 @@ class OfferPolicy < ApplicationPolicy
     user.snail?
   end
 
+  def my_offers?
+    user.snail?
+  end
+
   def show?
     true
   end
