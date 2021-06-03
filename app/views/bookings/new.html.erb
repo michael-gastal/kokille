@@ -1,5 +1,8 @@
-<%= simple_form_for [ @offer, @booking] do |f| %>
-  <%= f.input :arrival_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "Submit booking", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <%= simple_form_for [@offer, @booking] do |f| %>
+    <%= f.input :capacity, label: "For...", placeholder: "Max #{@offer.capacity} slugs", input_html: { min:"0", max: "#{@offer.capacity}" } %>
+    <%= f.input :arrival_date, label: "From" %>
+    <%= f.input :end_date, label: "To" %>
+    <%= f.submit "Submit booking", class: "btn btn-primary" %>
+  <% end %>
+</div>
