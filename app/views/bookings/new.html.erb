@@ -3,6 +3,6 @@
     <%= f.input :capacity, label: "For...", placeholder: "Max #{@offer.capacity} slugs", input_html: { min:"0", max: "#{@offer.capacity}" } %>
     <%= f.input :arrival_date, label: "From" %>
     <%= f.input :end_date, label: "To" %>
-    <%= f.submit "Submit booking", class: "btn btn-primary" %>
+    <%= f.submit "Book the Shell", class: "btn btn-primary" %>
   <% end %>
 </div>
