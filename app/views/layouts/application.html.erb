@@ -9,17 +9,18 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= favicon_link_tag asset_path('logopng.png') %>
   </head>
 
   <body>
+    <div class="main">
+      <%= render 'shared/navbar' %>
 
-    <%= render 'shared/navbar' %>
+      <%= yield %>
 
-    <%= yield %>
-
-    <%= render 'shared/flashes' %>
+      <%= render 'shared/flashes' %>
+    </div>
 
     <%= render 'shared/footer' %>
-
   </body>
 </html>

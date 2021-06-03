@@ -1,49 +1,62 @@
 <div class ="container-bg">
-    <h1>Let's find your futur Shellter</h1>
-    <div class="searchbar">
-    </div>
+    <h1>You don't have a Shell ? Let's take mine</h1>
+    <%= form_tag offers_path, method: :get, class: "input-group mb-3 searchbar" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control transparence",
+        placeholder: "Enter a city"
+      %>
+      <%= submit_tag "Search", class: "input-group-text btn-search" %>
+    <% end %>
 </div>
 
 <div class="content">
-    <h1>Noraj de ma paj</h1>
-    <p>Look at these DUUUUUDE</p>
+  <h1>Look at our best Shellterz</h1>
+  <p>Enjoy your trip in every city in good conditions thanks to our service of shells. See, chose and book the Shell of a nice Snail.</p>
 
-    <div class="cards">
+  <div class="cards">
+    <% @offers.each do |offer| %>
+      <%= link_to offer_path(offer), class: "card-link" do %>
         <div class="card-trip">
-            <%= image_tag("shells.jpg") %>
-            <div class="card-trip-infos">
+          <% if offer.photos.attached? %>
+            <%= cl_image_tag offer.photos.first.key %>
+          <% else %>
+            <%= image_tag("default_shell.png") %>
+          <% end %>
+          <div class="card-trip-infos">
             <div>
-                <h2>Shellz</h2>
-                <p>Desc about shellz...</p>
-                <p>Price per day (€/night) - 2 slugs<p>
+              <h2><%= offer.offer_title %></h2>
+              <p><%= offer.description[0..50] %>...</p>
+              <p><%= offer.price_per_day %>€/night · <%= offer.capacity %> slug<%= offer.capacity > 1 ? 's' : '' %></p>
+              <br>
             </div>
-          <%= image_tag("default_avatar.jpg", class: "card-trip-user avatar-bordered") %>
-            </div>
+            <% if offer.user.photo.attached? %>
+              <%= cl_image_tag offer.user.photo.key, class: "card-trip-user avatar-bordered" %>
+            <% else %>
+              <%= image_tag("default_avatar.jpg", class: "card-trip-user avatar-bordered") %>
+            <% end %>
+          </div>
         </div>
-        
-        <div class="card-trip">
-            <%= image_tag("shells.jpg") %>
-            <div class="card-trip-infos">
-            <div>
-                <h2>Shellz</h2>
-                <p>Desc about shellz...</p>
-                <p>Price per day (€/night) - 2 slugs<p>
-            </div>
-          <%= image_tag("default_avatar.jpg", class: "card-trip-user avatar-bordered") %>
-            </div>
-        </div>
-        
-        <div class="card-trip">
-            <%= image_tag("shells.jpg") %>
-            <div class="card-trip-infos">
-            <div>
-                <h2>Shellz</h2>
-                <p>Desc about shellz...</p>
-                <p>Price per day (€/night) - 2 slugs<p>
-            </div>
-          <%= image_tag("default_avatar.jpg", class: "card-trip-user avatar-bordered") %>
-            </div>
-        </div>
-</div>
+      <% end %>
+    <% end %>
+  </div>
 
+  <section id="about">
+    <div class="about-left-col">
+        <div class="img-about">
+          <%= image_tag("gary.png") %>
+        </div>
+    </div>
+
+    <div class="about-right-col">
+      <div class="about-text">
+        <p>Kokille was born from a friendship between a slug and a snail. Inseparable, George the slug used to always sleep in Arnaud the snail's shell. So they had the idea to propose to the snails to use their shells for the benefit of the slugs.
+          Our offer can be summarized as follows:
+          <br>
+          "Come and see the shiniest and cleanest shell in the city. Snails will advise you the best spot to drool and the best salad 🥗 to eat. Follow our snot. 🐌"
+        </p>
+        <a href="offers"> See our offers </a>
+      </div>
+    </div>
+  </section>
 </div>
