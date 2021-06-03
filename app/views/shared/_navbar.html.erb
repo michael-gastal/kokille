@@ -24,7 +24,7 @@
         <% end %>
         <% if policy(Offer).my_offers? %>
           <li class="nav-item">
-            <%= link_to "See my Rents", my_offers_offers_path, class: "nav-link classical-link" %>
+            <%= link_to "Your Rents", my_offers_offers_path, class: "nav-link classical-link" %>
           </li>
         <% end %>
         <% if policy(Booking).my_bookings? %>
