@@ -7,7 +7,7 @@ body {
 .container-bg {
     color: #FF006B;
     margin-bottom: 24px;
-    background-image: linear-gradient(rgba(100, 172, 51, 0.25), rgba(22, 22, 22, 0.25)),url('snail.jpeg');
+    background-image: linear-gradient(rgba(100, 172, 51, 0.25), rgba(22, 22, 22, 0.25)),url(asset-path("snail.jpeg"));
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -38,7 +38,7 @@ body {
     color: #242424;
     text-align:center;
   }
-  
+
   .content p {
     font-size: 25px;
     font-weight: 400;
@@ -46,7 +46,7 @@ body {
     margin-top: 24px;
     margin-bottom: 15px;
   }
-  
+
   .content {
     margin-left: 32px;
     margin-top: 24px;
