@@ -1,0 +1,5 @@
+<h2><%=  offer.offer_title %></h2>
+<p><%= offer.location_address %></p>
+<p>Host : <%= offer.user.name %></p>
+<%= link_to "See more", offer_path(offer), class: "btn-infos" %>
+
