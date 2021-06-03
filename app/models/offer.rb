@@ -11,4 +11,7 @@ class Offer < ApplicationRecord
   validates :location_address, presence: true
   validates :description, presence: true, length: { minimum: 120 }
   validates :offer_title, presence: true
+
+  geocoded_by :location_address
+  after_validation :geocode, if: :will_save_change_to_location_address?
 end

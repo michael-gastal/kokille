@@ -7,10 +7,24 @@ class OffersController < ApplicationController
     else
       @offers = Offer.all
     end
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+      }
+    end
   end
 
   def show
     @booking = Booking.new
+    @markers = [{ lat: @offer.latitude, lng: @offer.longitude, info_window: render_to_string(partial: "info_window", locals: { offer: @offer }) }]
+    # @markers = @offer.geocoded.first(1) do |offer|
+    #   {
+    #     lat: offer.latitude,
+    #     lng: offer.longitude
+    #   }
+    # end
   end
 
   def my_offers
