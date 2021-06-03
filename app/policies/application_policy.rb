@@ -18,6 +18,10 @@ class ApplicationPolicy
     false
   end
 
+  def my_bookings?
+    false
+  end
+
   def create?
     false
   end

@@ -1,6 +1,15 @@
 class BookingsController < ApplicationController
   before_action :find_offer, only: [:new, :create]
 
+  def index
+    @bookings = Booking.all
+  end
+
+  def my_bookings
+    @bookings = Booking.where(user: current_user)
+    authorize @bookings
+  end
+
   def new
     # we need @offer in our `simple_form_for`
     # @offer = Offer.find(params[:offer_id])
