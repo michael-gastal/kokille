@@ -12,8 +12,15 @@
   width: 40px;
 }
 
-.nav-item a {
+.classical-link {
   &:hover {
     color: #40916c !important;
+  }
+}
+
+.research-link {
+  color: #FF006B !important;
+  &:hover {
+    color: #FF006B !important;
   }
 }
