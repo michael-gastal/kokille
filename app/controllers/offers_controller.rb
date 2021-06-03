@@ -17,6 +17,7 @@ class OffersController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @markers = [{ lat: @offer.latitude, lng: @offer.longitude, info_window: render_to_string(partial: "info_window", locals: { offer: @offer }) }]
     # @markers = @offer.geocoded.first(1) do |offer|
     #   {
