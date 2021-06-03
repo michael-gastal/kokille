@@ -11,3 +11,16 @@
     text-decoration: none;
   }
 }
+
+.btn-search {
+  color: white;
+  background-color: #FF006B;
+  transition: opacity .5s ease;
+  padding: 4px 12px;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #FF006B;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}

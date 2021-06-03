@@ -2,7 +2,11 @@ class OffersController < ApplicationController
   before_action :find_offer, only: [:show, :edit, :update, :destroy]
 
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.where("location_address ILIKE ?", "%#{params[:query]}%")
+    else
+      @offers = Offer.all
+    end
   end
 
   def show
