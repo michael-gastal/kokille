@@ -4,6 +4,7 @@
 
 <div class="cards">
   <% @offers.each do |offer| %>
+      <%= link_to offer_path(offer), class: "card-link" do %>
     <div class="card-trip">
       <% if offer.photos.attached? %>
         <%= cl_image_tag offer.photos.first.key %>
@@ -16,7 +17,6 @@
           <p><%= offer.description[0..50] %>...</p>
           <p><%= offer.price_per_day %>€/night · <%= offer.capacity %> slug<%= offer.capacity > 1 ? 's' : '' %></p>
           <br>
-          <%= link_to "See more", offer_path(offer), class: "btn-infos" %>
         </div>
         <% if offer.user.photo.attached? %>
           <%= cl_image_tag offer.user.photo.key, class: "card-trip-user avatar-bordered" %>
@@ -25,5 +25,6 @@
         <% end %>
       </div>
     </div>
+  <% end %>
   <% end %>
 </div>
