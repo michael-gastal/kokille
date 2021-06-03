@@ -34,9 +34,10 @@ body {
 .content h1 {
     font-size: 50px;
     font-weight: 400;
+    font-weight:bold;
     margin-top: 40px;
     margin-bottom: 15px;
-    color: #242424;
+    color: #60BCFF;
     text-align:center;
   }
 
@@ -50,6 +51,66 @@ body {
 
   .content {
     margin-left: 32px;
-    margin-top: 24px;
+    margin-top: 160px;
     margin-bottom: 40px;
   }
+
+// about //
+
+#about {
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-left-col {
+  flex-basis: 40%;
+}
+
+.img-about {
+  padding-left: 100px;
+  width:80%;
+}
+
+.about-left-col img {
+  width: 80%;
+}
+
+.about-right-col {
+  flex-basis: 60%;
+}
+
+.about-text {
+  margin: 100px;
+}
+
+.about-text h1{
+  font-size: 50px;
+  margin-bottom: 2%;
+  padding: 0 0 0 0;
+}
+
+#about a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background:#FF006B;
+  width: 300px;
+}
+
+#about a:hover{
+  background: #CB085A;
+}
+.img-about:hover {
+
+     transform:scale(1.2);
+}
+
+
