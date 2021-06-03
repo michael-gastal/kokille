@@ -53,6 +53,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 16px;
+  height: 320px;
 }
 
 .card-trip > img {
@@ -68,9 +69,9 @@
 }
 
 .card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
+  font-size: 12px !important;
+  opacity: .7 !important;
+  margin: 0 !important;
 }
 
 
