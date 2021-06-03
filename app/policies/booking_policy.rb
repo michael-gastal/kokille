@@ -8,4 +8,8 @@ class BookingPolicy < ApplicationPolicy
   def create?
     !user.snail? && @snail != user
   end
+
+  def my_bookings?
+    !user.snail? && @snail != user
+  end
 end
