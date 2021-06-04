@@ -20,19 +20,30 @@
     text-align: justify;
   }
   p span.gauche {
-  float: left;
+  // float: left;
     color: #582f0e;
-    margin-top: 8px;
-    margin-bottom:16px;
+    // margin-top: 8px;
+    // margin-bottom:16px;
     margin-left:16px;
     font-size: 40px;
     font-weight: 400;
     font-weight: bold;
-    // margin-top: 40px;
-    padding-bottom: 15px;
+    // padding-bottom: 15px;
   }
   p span.droite {
-  float: right;
+  //float: right;
+  padding-top:4px;
   }
 }
 
+.page-title-1 {
+  p {
+    color: #0E0000;
+    font-size: 16px;
+    text-align: justify;
+  }
+}
+
+#vert {
+   color: #40916c;
+}
