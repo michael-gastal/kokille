@@ -34,7 +34,6 @@
                 <p><%= @offer.description %></p>
               </div>
           </div>
-              <% if policy(Booking).create? %>
           </div>
         </div>
 
@@ -47,6 +46,7 @@
           </div>
     </div>
 
+          <% if policy(Booking).create? %>
             <div class="form-container">
   <div class="form-group fixed-height">
     <h1 class="form-title">Book this Shell 🐌</h1>
