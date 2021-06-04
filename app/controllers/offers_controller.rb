@@ -37,7 +37,9 @@ class OffersController < ApplicationController
     @offers = Offer.where(user: current_user)
     @bookings = []
     @offers.each do |offer|
-      @bookings << offer.bookings
+      unless offer.bookings.nil?
+        @bookings << offer.bookings
+      end
     end
     authorize @offers
     # raise
