@@ -34,7 +34,6 @@
                 <p><%= @offer.description %></p>
               </div>
           </div>
-              <% if policy(Booking).create? %>
           </div>
         </div>
 
@@ -46,7 +45,7 @@
             </div>
           </div>
     </div>
-
+              <% if policy(Booking).create? %>
    <div class="card-form">
               <%= simple_form_for [@offer, @booking] do |f| %>
                 <%= f.input :capacity, label: "For...", placeholder: "Max #{@offer.capacity} slugs", input_html: { min:"0", max: "#{@offer.capacity}" } %>
