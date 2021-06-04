@@ -1,17 +1,17 @@
-<div class="container">
-  <h1> Create an offer </h1>
-    <div class="form-group fixed-height">
-      <%= simple_form_for(@offer) do |f| %>
-        <%= f.input :offer_title, label: "Title", placeholder: "Ex: Shell don Cooper" %>
-        <%= f.input :location_address, label: "Address", placeholder: "Ex: 123 rue du Magnolia, 13009 Marseille" %>
-        <%= f.input :shell_type, placeholder: "Ex: Loft, T2, T3, etc." %>
-        <%= f.input :description, placeholder: "Ex: What do you have to say about your shell ? (Min 120 characters)" %>
-        <%= f.input :capacity, label: "For how many slugs ?", placeholder: "Ex: 2" %>
-        <%= f.input :price_per_day, placeholder: "Ex: 65" %>
-        <%= f.input :start_available_time, label: "Available from" %>
-        <%= f.input :end_available_time, label: "Until" %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some photos" %>
-        <%= f.button :submit, "Create your offer", :class => "btn btn-lg btn-submit" %>
-      <% end %>
-    </div>
+<div class="form-container">
+  <div class="form-group fixed-height">
+    <h1 class="form-title">Rent out your Shell 🐌</h1>
+    <%= simple_form_for(@offer) do |f| %>
+      <%= f.input :offer_title, label: "Choose a Title for your Announcement", placeholder: "Ex: Shell don Cooper", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :location_address, label: "Where is your Shell located ?", placeholder: "Ex: 123 rue du Magnolia, 13009 Marseille", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :shell_type, label: "What kind of Shell is it ?", placeholder: "Ex: Loft, T2, T3, etc.", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :description, label: "Tell us some words about your Shell", placeholder: "Ex: What do you have to say about your shell ? (Min 120 characters)", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :capacity, label: "How many slugs can come in your Shell ?", placeholder: "Ex: 2", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :price_per_day, label: "Fix your price (per night)", placeholder: "Ex: 65", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :start_available_time, label: "My Shell is available from", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :end_available_time, label: "Until", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some photos", label_html: { class: 'label-field' } %>
+      <%= f.button :submit, "Create your Announcement !", :class => "btn btn-lg btn-submit" %>
+    <% end %>
+  </div>
 </div>
