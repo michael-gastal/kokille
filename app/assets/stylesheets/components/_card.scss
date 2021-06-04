@@ -28,19 +28,26 @@
 }
 
 .card-form{
-  margin-left: 50%;
-  margin-top: 20%;
   padding: 16px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 16px;
   width: 40%;
   height: 46%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:40px;
 }
 
 .card-desc {
   width: 80%;
 }
+
+.card-desc-1 {
+  width: 93%;
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -121,4 +128,26 @@
 
 .cards-container {
   display: flex;
+}
+
+.about-left-col-1 {
+  flex-basis: 60%;
+}
+
+.about-right-col-1 {
+  flex-basis: 40%;
+  padding-top:16px;
+  padding-right:8px;
+}
+
+.info {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  padding:16px;
+}
+
+.photo-principale {
+  width:50%;
+  height:50%;
 }
