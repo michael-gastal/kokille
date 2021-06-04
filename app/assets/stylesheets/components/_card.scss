@@ -2,10 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
+  margin-left: 16px;
 }
 
 .cards-home {
   grid-template-columns: 1fr 1fr 1fr !important;
+  margin-left: 0 !important;
 }
 
 .card-link{
@@ -21,6 +23,7 @@
 .cards-show{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
   padding-top: 24px;
 }
 
@@ -80,7 +83,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 16px;
   height: 320px;
-  margin: 8px 0px 16px 16px;
 }
 
 .card-trip > img {
@@ -92,7 +94,7 @@
 .card-trip h2 {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .card-trip p {
@@ -119,6 +121,4 @@
 
 .cards-container {
   display: flex;
-  margin-left: 16px;
 }
-
