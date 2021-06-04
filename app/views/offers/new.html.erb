@@ -1,5 +1,5 @@
 <div class="container">
-  <h1> Create an offer </h1> 
+  <h1> Create an offer </h1>
     <div class="form-group fixed-height">
       <%= simple_form_for(@offer) do |f| %>
         <%= f.input :offer_title, label: "Title", placeholder: "Ex: Shell don Cooper" %>
@@ -11,7 +11,7 @@
         <%= f.input :start_available_time, label: "Available from" %>
         <%= f.input :end_available_time, label: "Until" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some photos" %>
-        <%= f.button :submit, "Create your offer", :class => "btn btn-lg btn-search" %>
+        <%= f.button :submit, "Create your offer", :class => "btn btn-lg btn-submit" %>
       <% end %>
     </div>
 </div>
