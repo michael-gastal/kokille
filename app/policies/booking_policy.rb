@@ -12,4 +12,8 @@ class BookingPolicy < ApplicationPolicy
   def my_bookings?
     !user.snail? && @snail != user
   end
+
+  # def my_offers?
+  #   record.offer_id.user_id == user
+  # end
 end

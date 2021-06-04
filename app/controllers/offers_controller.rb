@@ -35,7 +35,12 @@ class OffersController < ApplicationController
 
   def my_offers
     @offers = Offer.where(user: current_user)
+    @bookings = []
+    @offers.each do |offer|
+      @bookings << offer.bookings
+    end
     authorize @offers
+    # raise
   end
 
   def new
