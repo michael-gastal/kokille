@@ -2,13 +2,11 @@
   <div class="cards-show">
     <div class="card-desc">
       <div class="page-title">
-        <h2><%=  @offer.offer_title %></h2>
-        <p><%= @offer.location_address %></p>
-        <p>Host : <%= @offer.user.name %></p>
+        <p><span class="gauche"><%=  @offer.offer_title %></span><span class="droite">- <%= @offer.location_address %></span></p>
       </div>
 
-
       <div class="offer-content">
+        <p>Host : <%= @offer.user.name %></p>
         <% if @offer.photos.attached? %>
           <% @offer.photos.each do |photo| %>
             <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill %>
