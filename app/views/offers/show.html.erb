@@ -6,7 +6,7 @@
       </div>
 
       <div class="offer-content">
-        <p>Host : <%= @offer.user.name %></p>
+      <p>Host : <%= @offer.user.name %></p>
         <% if @offer.photos.attached? %>
           <% @offer.photos.each do |photo| %>
             <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill %>
@@ -26,7 +26,7 @@
                 <%= f.input :capacity, label: "For...", placeholder: "Max #{@offer.capacity} slugs", input_html: { min:"0", max: "#{@offer.capacity}" } %>
                 <%= f.input :arrival_date, label: "From" %>
                 <%= f.input :end_date, label: "To" %>
-                <%= f.submit "Book the Shell", class: "btn btn-submit" %>
+                <%= f.submit "Book the Shell", class: "btn btn-primary" %>
               <% end %>
             </div>
           <% end %>
