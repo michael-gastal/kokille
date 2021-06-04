@@ -40,13 +40,14 @@
 
   <div>
     <% if policy(@offer).edit? %>
-      <%= link_to "Edit your offer",edit_offer_path(@offer.id) %>
+      <%= link_to "Edit your Shell",edit_offer_path(@offer.id), class: "btn btn-submit" %>
     <% end %>
 
     <% if policy(@offer).destroy? %>
-      <%= link_to "Delete your offer",offer_path(@offer),
+      <%= link_to "Delete your Shell",offer_path(@offer),
+                  class: "btn btn-submit",
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %>
+                  data: { confirm: "Do you really want to delete your Shell ?" } %>
     <% end %>
   </div>
 </div>
