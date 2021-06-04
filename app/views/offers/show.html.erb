@@ -45,27 +45,33 @@
             </div>
           </div>
     </div>
-              <% if policy(Booking).create? %>
-   <div class="card-form">
-              <%= simple_form_for [@offer, @booking] do |f| %>
-                <%= f.input :capacity, label: "For...", placeholder: "Max #{@offer.capacity} slugs", input_html: { min:"0", max: "#{@offer.capacity}" } %>
-                <%= f.input :arrival_date, label: "From" %>
-                <%= f.input :end_date, label: "To" %>
-                <%= f.submit "Book the Shell", class: "btn btn-search" %>
-              <% end %>
-    </div>
+
+          <% if policy(Booking).create? %>
+            <div class="form-container">
+  <div class="form-group fixed-height">
+    <h1 class="form-title">Book this Shell 🐌</h1>
+    <%= simple_form_for [@offer, @booking] do |f| %>
+      <%= f.input :capacity, label: "How many Slugs are you ?", placeholder: "Max #{@offer.capacity} slugs", input_html: { min:"0", max: "#{@offer.capacity}" }, input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :arrival_date, label: "When are you arriving ?", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.input :end_date, label: "When are you leaving ?", input_html: { class: "input-field" }, label_html: { class: 'label-field' } %>
+      <%= f.submit "Book the Shell !", class: "btn btn-submit" %>
+    <% end %>
+  </div>
+</div>
+
           <% end %>
 </div>
 
   <div>
     <% if policy(@offer).edit? %>
-      <%= link_to "Edit your offer",edit_offer_path(@offer.id) %>
+      <%= link_to "Edit your Shell",edit_offer_path(@offer.id), class: "btn btn-submit" %>
     <% end %>
 
     <% if policy(@offer).destroy? %>
-      <%= link_to "Delete your offer",offer_path(@offer),
+      <%= link_to "Delete your Shell",offer_path(@offer),
+                  class: "btn btn-submit",
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %>
+                  data: { confirm: "Do you really want to delete your Shell ?" } %>
     <% end %>
   </div>
 </div>

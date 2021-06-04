@@ -22,13 +22,15 @@ class OffersController < ApplicationController
 
   def show
     @booking = Booking.new
-    @markers = [{ lat: @offer.latitude, lng: @offer.longitude, info_window: render_to_string(partial: "info_window", locals: { offer: @offer }) }]
-    # @markers = @offer.geocoded.first(1) do |offer|
-    #   {
-    #     lat: offer.latitude,
-    #     lng: offer.longitude
-    #   }
-    # end
+    @markers = [{
+      lat: @offer.latitude,
+      lng: @offer.longitude,
+      info_window: render_to_string(
+        partial: "info_window",
+        locals: { offer: @offer }
+      ),
+      image_url: helpers.asset_url('marker-snail-classic.jpg')
+    }]
   end
 
   def my_offers
