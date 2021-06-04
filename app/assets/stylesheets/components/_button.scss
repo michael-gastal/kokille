@@ -15,7 +15,8 @@
 .btn-search {
   color: white;
   background-color: #FF006B;
-  transition: opacity .5s ease;
+  transition: background-color .5s ease, border .5s ease;
+  // transition: border .5s ease;
   padding: 4px 12px;
   border-radius: 0 4px 4px 0;
   border: 1px solid #FF006B;
@@ -23,5 +24,20 @@
     color: white;
     text-decoration: none;
     background-color:#CB085A;
+    border: 1px solid #CB085A;
+  }
+}
+
+.btn-submit {
+  color: white;
+  background-color: #FF006B;
+  opacity: 0.8;
+  transition: opacity .5s ease;
+  padding: 6px 12px;
+  border-radius: 4px;
+  &:hover {
+    opacity: 1;
+    color: white;
+    text-decoration: none;
   }
 }

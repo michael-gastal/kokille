@@ -4,6 +4,10 @@
   grid-gap: 16px;
 }
 
+.cards-home {
+  grid-template-columns: 1fr 1fr 1fr !important;
+}
+
 .card-link{
   margin-left: 0 !important;
   color:black;
@@ -115,5 +119,6 @@
 
 .cards-container {
   display: flex;
+  margin-left: 16px;
 }
 
