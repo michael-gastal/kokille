@@ -18,18 +18,16 @@
               <p><%= offer.description[0..50] %>...</p>
               <p><%= offer.price_per_day %>€/night · <%= offer.capacity %> slug<%= offer.capacity > 1 ? 's' : '' %></p>
               <br>
-              <% if @bookings.first.empty? %>
-                <p>You don't have booking</p>
-                <% else %>
-                  <% @bookings.each do |booking| %>
-                    <% if booking.first.offer == offer %>
-                      <% booking.each do |b| %>
-                        <p>Entry date: <strong><%= b.arrival_date %></strong> | Exit date: <strong><%= b.end_date %></strong> | Reserved by: <strong><%= b.user.name %></strong> </p>
-                      <% end %>
+              <% @bookings.each do |booking| %>
+                <% unless booking.first.nil? %>
+                  <% if booking.first.offer == offer %>
+                    <% booking.each do |b| %>
+                      <p>Entry date: <strong><%= b.arrival_date %></strong> | Exit date: <strong><%= b.end_date %></strong> | Reserved by: <strong><%= b.user.name %></strong> </p>
                     <% end %>
                   <% end %>
+                <% end %>
               <% end %>
-              </div>
+            </div>
             <% if offer.user.photo.attached? %>
               <%= cl_image_tag offer.user.photo.key, class: "card-trip-user avatar-bordered" %>
             <% else %>
